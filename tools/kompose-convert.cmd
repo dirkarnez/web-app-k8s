@@ -12,6 +12,10 @@ cd /d "%DOWNLOADS_DIR%" &&^
 %SystemRoot%\System32\curl.exe "https://github.com/kubernetes/kompose/releases/download/v1.34.0/kompose-windows-amd64.exe" -L -O
 )
 
+@REM --provider=openshift
+
 if exist %KOMPOSE_EXE% (
-    echo kompose %KOMPOSE_EXE% found
+echo kompose %KOMPOSE_EXE% found && %KOMPOSE_EXE% convert -f %1
 )
+
+pause
